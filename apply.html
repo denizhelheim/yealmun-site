@@ -10,16 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <header class="site-header">
         <div class="container header-container">
             <div class="logo-area">
-                <img src="assets/yealmun_logo.jpeg" alt="YEALMUN Logo" class="logo-img">
-                <span class="logo-text">YEALMUN</span>
+                <a href="index.html" class="logo-link">
+                    <img src="assets/yealmun_logo.jpeg" alt="YEALMUN Logo" class="logo-img">
+                    <span class="logo-text">YEALMUN</span>
+                </a>
             </div>
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="committees.html" class="nav-link">Committees</a></li>
                     <li><a href="team.html" class="nav-link">Our Team</a></li>
@@ -35,26 +35,25 @@
     </header>
 
     <main>
-        <section class="page-hero form-hero">
+        <section class="page-section">
             <div class="container">
-                <h1>Delegate Application</h1>
-                <p>Apply to join YEALMUN 2025</p>
-            </div>
-        </section>
-
-        <section class="form-section">
-            <div class="container">
-                <div class="form-card">
-                    <div class="form-header">
-                        <i class="fas fa-file-alt" style="font-size: 2.5rem; color: #2563eb; margin-bottom: 1rem; display: inline-block;"></i>
-                        <h2>Application Form</h2>
-                        <p><strong>Applies opening on September 1</strong></p>
-                        <p style="margin-top:0.5rem;">Please use the button below to access the Google Forms application.</p>
-                    </div>
-                    <a href="#" class="btn btn-primary btn-submit" style="display: inline-flex; width: auto; margin-top: 1.5rem;" id="applyButton">
-                        Go to Application Form <i class="fas fa-external-link-alt"></i>
+                <div class="section-header">
+                    <h1>Applications</h1>
+                    <p>Choose the application form you need</p>
+                </div>
+                <div class="apply-grid">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSff4vTSYl5tMcH9CEel-G82XhEoafDR_nLQMVFRY9Vi69ogCw/viewform?usp=header" target="_blank" class="apply-card">
+                        <div class="apply-icon"><i class="fas fa-user-tie"></i></div>
+                        <h3>Admin Application</h3>
                     </a>
-                    <p style="margin-top: 2rem; font-size: 0.85rem; color: #64748b;">Note: The link is not yet active. Please check back later.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScaqQCo2LjrrJ1LRAbGDUX1rHy0JFkiZuaHRVITuIzvbWaIGA/viewform?usp=publish-editor" target="_blank" class="apply-card">
+                        <div class="apply-icon"><i class="fas fa-newspaper"></i></div>
+                        <h3>Press Application</h3>
+                    </a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfGV1Qwr_Nb6r3qvFI5xiECWG9hF1nx6prvQ_IUliQYpvZtLw/viewform?usp=dialog" target="_blank" class="apply-card">
+                        <div class="apply-icon"><i class="fas fa-users"></i></div>
+                        <h3>Delegate Application</h3>
+                    </a>
                 </div>
             </div>
         </section>
@@ -63,19 +62,8 @@
     <footer class="site-footer">
         <div class="container footer-container">
             <div class="footer-col">
-                <img src="assets/yealmun_logo.jpeg" alt="YEALMUN Logo" class="footer-logo">
-                <p>Young Explorers And Leaders Model United Nations</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="committees.html">Committees</a></li>
                     <li><a href="team.html">Our Team</a></li>
@@ -87,16 +75,15 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Contact</h4>
-                <ul class="contact-info">
-                    <li><i class="fas fa-envelope"></i> info@yealmun.org</li>
-                    <li><i class="fas fa-phone-alt"></i> +90 212 555 44 33</li>
-                    <li><i class="fas fa-map-marker-alt"></i> İzmir, Turkey</li>
+                <h4>Social Links</h4>
+                <ul class="social-links">
+                    <li><a href="https://www.instagram.com/yeal.mun26" target="_blank"><i class="fab fa-instagram"></i> @yeal.mun26</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 YEALMUN. All rights reserved.<br>Design & Development: Süleyman Deniz Yünden</p>
+            <p>&copy; 2026 YEALMUN. All rights reserved.</p>
+            <p class="credit">Development: Süleyman Deniz Yünden | Design: Eren Şakacı</p>
         </div>
     </footer>
 

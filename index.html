@@ -7,19 +7,19 @@
     <link rel="icon" type="image/jpeg" href="assets/yealmun_logo.jpeg">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <header class="site-header">
         <div class="container header-container">
             <div class="logo-area">
-                <img src="assets/yealmun_logo.jpeg" alt="YEALMUN Logo" class="logo-img">
-                <span class="logo-text">YEALMUN</span>
+                <a href="index.html" class="logo-link">
+                    <img src="assets/yealmun_logo.jpeg" alt="YEALMUN Logo" class="logo-img">
+                    <span class="logo-text">YEALMUN</span>
+                </a>
             </div>
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="committees.html" class="nav-link">Committees</a></li>
                     <li><a href="team.html" class="nav-link">Our Team</a></li>
@@ -35,51 +35,29 @@
     </header>
 
     <main>
-        <section class="hero">
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <span class="hero-badge">17–19 April 2025 • İzmir/Bornova • Yunus Emre Anatolian High School</span>
-                    <h1>Future Leaders Gather at YEALMUN</h1>
-                    <p>An international Model United Nations conference where young delegates develop diplomacy, leadership, and negotiation skills. Join us for an unforgettable experience.</p>
-                    <div class="hero-buttons">
-                        <a href="apply.html" class="btn btn-primary">Apply Now <i class="fas fa-arrow-right"></i></a>
-                        <a href="about.html" class="btn btn-outline">Learn More</a>
+        <section class="home-hero">
+            <div class="container home-content">
+                <h1>İZMİR YUNUS EMRE ANATOLIAN HIGHSCHOOL<br>YEALMUN CONFERENCE</h1>
+                <p class="countdown-label">Applications open in</p>
+                <div class="countdown-grid">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Seconds</span>
                     </div>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat-card"><span class="stat-number">250+</span><span>Participants</span></div>
-                    <div class="stat-card"><span class="stat-number">12</span><span>Committees</span></div>
-                    <div class="stat-card"><span class="stat-number">30+</span><span>Countries</span></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="features">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Why YEALMUN?</h2>
-                    <p>Five reasons to join our Model United Nations conference</p>
-                </div>
-                <div class="features-grid">
-                    <div class="feature-card"><div class="feature-icon"><i class="fas fa-globe-americas"></i></div><h3>Global Vision</h3><p>Network with delegates from diverse cultures and gain a worldwide perspective.</p></div>
-                    <div class="feature-card"><div class="feature-icon"><i class="fas fa-chalkboard-user"></i></div><h3>Professional Academy</h3><p>Workshops and briefings led by experienced academics and MUN professionals.</p></div>
-                    <div class="feature-card"><div class="feature-icon"><i class="fas fa-award"></i></div><h3>Award‑Winning</h3><p>Recognition for best delegate, best position paper, and more.</p></div>
-                    <div class="feature-card"><div class="feature-icon"><i class="fas fa-handshake"></i></div><h3>Social Events</h3><p>Gala night, panel discussions, and cultural excursions included.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="about-preview">
-            <div class="container about-preview-grid">
-                <div class="about-preview-content">
-                    <span class="section-tag" style="font-weight:600;color:#2563eb;">About Us</span>
-                    <h2>YEALMUN: A Platform for Young Diplomats</h2>
-                    <p>YEALMUN is a student‑led Model United Nations conference that empowers young people to tackle global issues, develop negotiation skills, and become tomorrow’s leaders. Since 2020, we have inspired thousands of participants.</p>
-                    <a href="about.html" class="btn-link">More Details <i class="fas fa-chevron-right"></i></a>
-                </div>
-                <div class="about-preview-image">
-                    <div class="mock-image-bg"><i class="fas fa-university"></i> YEALMUN Simulation</div>
-                </div>
+                <p class="countdown-message">See you soon when the applications are open.</p>
             </div>
         </section>
     </main>
@@ -87,19 +65,8 @@
     <footer class="site-footer">
         <div class="container footer-container">
             <div class="footer-col">
-                <img src="assets/yealmun_logo.jpeg" alt="YEALMUN Logo" class="footer-logo">
-                <p>Young Explorers And Leaders Model United Nations</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="committees.html">Committees</a></li>
                     <li><a href="team.html">Our Team</a></li>
@@ -111,16 +78,15 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Contact</h4>
-                <ul class="contact-info">
-                    <li><i class="fas fa-envelope"></i> info@yealmun.org</li>
-                    <li><i class="fas fa-phone-alt"></i> +90 212 555 44 33</li>
-                    <li><i class="fas fa-map-marker-alt"></i> İzmir, Turkey</li>
+                <h4>Social Links</h4>
+                <ul class="social-links">
+                    <li><a href="https://www.instagram.com/yeal.mun26" target="_blank"><i class="fab fa-instagram"></i> @yeal.mun26</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 YEALMUN. All rights reserved.<br>Design & Development: Süleyman Deniz Yünden</p>
+            <p>&copy; 2026 YEALMUN. All rights reserved.</p>
+            <p class="credit">Development: Süleyman Deniz Yünden | Design: Eren Şakacı</p>
         </div>
     </footer>
 

@@ -1,4 +1,4 @@
-/* style.css - YEALMUN Sade Mavi-Beyaz Tema */
+/* style.css – YEALMUN Sade Tema, Siyah Başlık */
 * {
     margin: 0;
     padding: 0;
@@ -18,15 +18,14 @@ body {
     padding: 0 20px;
 }
 
-/* HEADER */
+/* HEADER – SİYAH */
 .site-header {
-    background: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
-    padding: 0.8rem 0;
+    background: #000000;
+    padding: 0.6rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid #1a1a1a;
 }
 
 .header-container {
@@ -38,18 +37,28 @@ body {
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
 }
 
 .logo-img {
-    height: 44px;
-    width: auto;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff;
 }
 
 .logo-text {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    color: #1e3a8a;
+    color: #ffffff;
     letter-spacing: -0.5px;
 }
 
@@ -60,7 +69,7 @@ body {
 
 .nav-list {
     display: flex;
-    gap: 1.2rem;
+    gap: 1rem;
     list-style: none;
     flex-wrap: wrap;
 }
@@ -68,17 +77,17 @@ body {
 .nav-link {
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.95rem;
-    color: #1e293b;
+    font-size: 0.9rem;
+    color: #cccccc;
     padding: 0.4rem 0;
     border-bottom: 2px solid transparent;
-    transition: border-color 0.15s;
+    transition: border-color 0.15s, color 0.15s;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    border-bottom-color: #2563eb;
-    color: #1e3a8a;
+    color: #ffffff;
+    border-bottom-color: #ffffff;
 }
 
 .mobile-menu-btn {
@@ -87,192 +96,234 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    color: #1e3a8a;
+    color: #ffffff;
 }
 
-/* BUTTONS */
-.btn {
-    display: inline-block;
-    padding: 10px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.15s, color 0.15s;
-}
-
-.btn-primary {
-    background: #2563eb;
-    color: white;
-}
-.btn-primary:hover {
-    background: #1d4ed8;
-}
-
-.btn-outline {
-    border: 2px solid #2563eb;
-    color: #2563eb;
-    background: transparent;
-}
-.btn-outline:hover {
-    background: #eff6ff;
-}
-
-.btn-link {
-    color: #2563eb;
-    text-decoration: none;
-    font-weight: 600;
-}
-.btn-link:hover {
-    color: #1d4ed8;
-}
-
-/* HERO */
-.hero {
-    background: #eff6ff;
-    padding: 4rem 0;
-    border-bottom: 1px solid #dbeafe;
-}
-
-.hero-content {
+/* HOME HERO */
+.home-hero {
+    min-height: calc(100vh - 140px);
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #f8faff;
+    padding: 3rem 0;
 }
 
-.hero-text {
-    flex: 1.2;
-}
-
-.hero-badge {
-    background: #dbeafe;
-    color: #1e40af;
-    padding: 0.2rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    display: inline-block;
-    margin-bottom: 1rem;
-}
-
-.hero-text h1 {
+.home-content h1 {
     font-size: 2.8rem;
     font-weight: 700;
     color: #0f172a;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.5rem;
     line-height: 1.2;
 }
 
-.hero-text p {
-    font-size: 1.05rem;
-    color: #334155;
-    max-width: 90%;
-    margin-bottom: 1.8rem;
+.countdown-label {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
 }
 
-.hero-buttons {
+.countdown-grid {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.hero-stats {
-    flex: 0.8;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
     justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
 }
 
-.stat-card {
-    background: white;
-    padding: 1rem 1.5rem;
+.countdown-item {
+    background: #ffffff;
+    padding: 1.2rem 1.8rem;
     border-radius: 12px;
     border: 1px solid #e2e8f0;
-    text-align: center;
     min-width: 100px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
 
-.stat-number {
-    font-size: 1.8rem;
+.countdown-number {
+    display: block;
+    font-size: 3rem;
     font-weight: 700;
-    color: #2563eb;
+    color: #1e3a8a;
+    line-height: 1.2;
+}
+
+.countdown-item .countdown-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #475569;
+    margin-top: 0.3rem;
     display: block;
 }
 
-/* SECTIONS */
-.features,
-.about-preview,
-.timeline,
-.team-section,
-.form-section,
+.countdown-message {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #334155;
+    margin-top: 0.5rem;
+}
+
+/* PAGE SECTIONS */
 .page-section {
-    padding: 4rem 0;
+    padding: 4rem 0 5rem 0;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
+    width: 100%;
 }
 
-.section-header h2 {
-    font-size: 2rem;
+.section-header h1 {
+    font-size: 4rem;
     color: #0f172a;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    letter-spacing: -1px;
 }
 
 .section-header p {
     color: #475569;
+    font-size: 1.2rem;
 }
 
-.features-grid,
+/* PAGE PLACEHOLDER (diğer sayfalar) */
+.page-placeholder {
+    min-height: calc(100vh - 280px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 0 5rem 0;
+}
+
+.page-placeholder h1 {
+    font-size: 2.5rem;
+    color: #0f172a;
+    margin-bottom: 1rem;
+}
+
+.page-placeholder p {
+    font-size: 1.1rem;
+    color: #475569;
+}
+
+/* APPLY CARDS */
+.apply-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.apply-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: #0f172a;
+    transition: box-shadow 0.15s, transform 0.1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.apply-card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+}
+
+.apply-icon {
+    font-size: 2.8rem;
+    color: #2563eb;
+}
+
+.apply-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* TEAM CARDS – YATAY, 3 SÜTUN, FOTOĞRAFLAR BÜYÜK */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.8rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.feature-card,
-.team-card {
-    background: white;
-    padding: 1.8rem 1.2rem;
-    border-radius: 12px;
+.team-card-horizontal {
+    background: #ffffff;
     border: 1px solid #e2e8f0;
-    text-align: center;
-}
-
-.feature-icon {
-    font-size: 2.2rem;
-    color: #2563eb;
-    margin-bottom: 0.8rem;
-}
-
-.about-preview-grid {
+    border-radius: 14px;
+    padding: 1.2rem;
     display: flex;
-    gap: 2.5rem;
     align-items: center;
-    flex-wrap: wrap;
+    gap: 1.2rem;
+    min-height: 180px;
+    transition: box-shadow 0.15s;
 }
 
-.about-preview-content {
+.team-card-horizontal:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+.team-photo-horizontal {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e2e8f0;
+    flex-shrink: 0;
+}
+
+.team-photo-horizontal.small {
+    width: 95px;
+    height: 95px;
+}
+
+.duo-photos-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.team-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
     flex: 1;
+    min-width: 0;
 }
 
-.mock-image-bg {
-    background: #dbeafe;
-    border-radius: 16px;
-    padding: 2.5rem;
-    text-align: center;
-    color: #1e3a8a;
+.team-info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.team-info .team-title {
+    font-size: 0.85rem;
+    color: #2563eb;
     font-weight: 500;
 }
 
-/* FOOTER */
+/* FOOTER – SİYAH, üstte boşluk */
 .site-footer {
-    background: #0f172a;
+    background: #000000;
     color: #cbd5e1;
     padding-top: 2.5rem;
+    margin-top: 3rem;
 }
 
 .footer-container {
@@ -287,24 +338,11 @@ body {
     min-width: 160px;
 }
 
-.footer-logo {
-    height: 40px;
-    margin-bottom: 10px;
-    filter: brightness(0) invert(1);
-}
-
-.social-links a {
-    color: #94a3b8;
-    margin-right: 1rem;
-    font-size: 1.2rem;
-}
-.social-links a:hover {
-    color: #60a5fa;
-}
-
 .footer-col h4 {
-    color: white;
+    color: #ffffff;
+    font-weight: 600;
     margin-bottom: 0.8rem;
+    font-size: 1rem;
 }
 
 .footer-col ul {
@@ -318,15 +356,17 @@ body {
 .footer-col ul li a {
     color: #cbd5e1;
     text-decoration: none;
-}
-.footer-col ul li a:hover {
-    color: #93c5fd;
+    font-size: 0.95rem;
 }
 
-.contact-info li {
+.footer-col ul li a:hover {
+    color: #ffffff;
+}
+
+.social-links li a {
     display: flex;
-    gap: 0.6rem;
     align-items: center;
+    gap: 0.5rem;
 }
 
 .footer-bottom {
@@ -335,109 +375,44 @@ body {
     border-top: 1px solid #1e293b;
     margin-top: 2rem;
     font-size: 0.8rem;
+    color: #94a3b8;
+    line-height: 1.8;
 }
 
-/* PAGE HERO */
-.page-hero {
-    background: #eff6ff;
-    padding: 2.5rem 0;
-    text-align: center;
+.footer-bottom .credit {
+    margin-top: 0.3rem;
+    font-size: 0.75rem;
+    color: #64748b;
 }
 
-.page-hero h1 {
-    font-size: 2.2rem;
-    color: #0f172a;
+/* BUTTON (apply sayfasında) */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s;
 }
 
-.page-hero p {
-    color: #334155;
+.btn-primary {
+    background: #2563eb;
+    color: #ffffff;
 }
-
-/* MISC */
-.alt-bg {
-    background: #f1f5f9;
-}
-
-.mission-box {
-    display: flex;
-    gap: 1rem;
-    background: #f1f5f9;
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
-    margin-top: 1.5rem;
-    align-items: flex-start;
-}
-
-.mission-box i {
-    font-size: 1.8rem;
-    color: #2563eb;
-}
-
-.about-grid {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.about-text {
-    flex: 2;
-}
-
-.about-stats-box {
-    flex: 1;
-    background: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    border: 1px solid #e2e8f0;
-}
-
-.stat-item {
-    text-align: center;
-    padding: 0.8rem;
-    background: #f8faff;
-    border-radius: 10px;
-    margin-bottom: 0.8rem;
-}
-
-.stat-item .stat-number {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #1e40af;
-}
-
-.timeline-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-}
-
-.timeline-card {
-    background: white;
-    padding: 1.2rem 1.5rem;
-    border-radius: 12px;
-    width: 200px;
-    text-align: center;
-    border: 1px solid #e2e8f0;
-}
-
-.year {
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: #2563eb;
-    display: block;
-}
-
-/* FORM CARD (apply) */
-.form-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-    text-align: center;
+.btn-primary:hover {
+    background: #1d4ed8;
 }
 
 /* MOBILE */
+@media (max-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+}
+
 @media (max-width: 768px) {
     .mobile-menu-btn {
         display: block;
@@ -446,26 +421,60 @@ body {
         position: fixed;
         top: 70px;
         left: -100%;
-        background: white;
+        background: #000000;
         flex-direction: column;
         width: 75%;
         height: 100vh;
         padding: 2rem;
         transition: left 0.2s;
-        box-shadow: 2px 0 20px rgba(0,0,0,0.05);
-        gap: 1rem;
+        gap: 1.2rem;
         z-index: 200;
+        border-right: 1px solid #1a1a1a;
     }
     .nav-list.active-mobile {
         left: 0;
     }
-    .hero-text h1 {
+    .nav-link {
+        color: #cccccc;
+        font-size: 1rem;
+    }
+    .nav-link:hover {
+        color: #ffffff;
+    }
+    .home-content h1 {
         font-size: 2rem;
     }
-    .hero-text p {
-        max-width: 100%;
+    .countdown-grid {
+        gap: 1rem;
     }
-    .hero-stats {
-        margin-top: 1rem;
+    .countdown-item {
+        padding: 0.8rem 1.2rem;
+        min-width: 70px;
+    }
+    .countdown-number {
+        font-size: 2rem;
+    }
+    .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+    .section-header h1 {
+        font-size: 2.8rem;
+    }
+    .team-card-horizontal {
+        padding: 1rem;
+        min-height: 150px;
+        gap: 1rem;
+    }
+    .team-photo-horizontal {
+        width: 110px;
+        height: 110px;
+    }
+    .team-photo-horizontal.small {
+        width: 75px;
+        height: 75px;
+    }
+    .team-info h3 {
+        font-size: 0.9rem;
     }
 }
