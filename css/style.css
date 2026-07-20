@@ -1,4 +1,4 @@
-/* style.css – YEALMUN Sade Tema, Siyah Başlık */
+/* style.css – YEALMUN Sade Tema, Siyah Başlık, Mobile Uyum */
 * {
     margin: 0;
     padding: 0;
@@ -213,9 +213,9 @@ body {
 /* APPLY CARDS */
 .apply-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -405,15 +405,29 @@ body {
     background: #1d4ed8;
 }
 
-/* MOBILE */
+/* ============================================================ */
+/* MOBILE UYUM */
+/* ============================================================ */
+
+/* Tablet ve küçük ekranlar (max-width: 992px) */
 @media (max-width: 992px) {
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.2rem;
     }
+    
+    .section-header h1 {
+        font-size: 3rem;
+    }
+    
+    .home-content h1 {
+        font-size: 2.2rem;
+    }
 }
 
+/* Telefon (max-width: 768px) */
 @media (max-width: 768px) {
+    /* Mobile menü */
     .mobile-menu-btn {
         display: block;
     }
@@ -430,6 +444,7 @@ body {
         gap: 1.2rem;
         z-index: 200;
         border-right: 1px solid #1a1a1a;
+        overflow-y: auto;
     }
     .nav-list.active-mobile {
         left: 0;
@@ -441,40 +456,151 @@ body {
     .nav-link:hover {
         color: #ffffff;
     }
+    
+    /* Logo küçülsün */
+    .logo-img {
+        height: 48px;
+        width: 48px;
+    }
+    .logo-text {
+        font-size: 1.4rem;
+    }
+    
+    /* Başlıklar */
+    .section-header h1 {
+        font-size: 2.5rem;
+    }
+    .section-header p {
+        font-size: 1rem;
+    }
+    
+    /* Home */
     .home-content h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     .countdown-grid {
-        gap: 1rem;
+        gap: 0.8rem;
     }
     .countdown-item {
-        padding: 0.8rem 1.2rem;
-        min-width: 70px;
+        padding: 0.8rem 1rem;
+        min-width: 60px;
     }
     .countdown-number {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
+    .countdown-label {
+        font-size: 1rem;
+    }
+    
+    /* Team kartları – tek sütun */
     .team-grid {
         grid-template-columns: 1fr;
-        max-width: 500px;
-    }
-    .section-header h1 {
-        font-size: 2.8rem;
+        max-width: 100%;
+        gap: 1rem;
     }
     .team-card-horizontal {
         padding: 1rem;
-        min-height: 150px;
+        min-height: 130px;
         gap: 1rem;
     }
     .team-photo-horizontal {
-        width: 110px;
-        height: 110px;
+        width: 100px;
+        height: 100px;
     }
     .team-photo-horizontal.small {
-        width: 75px;
-        height: 75px;
+        width: 70px;
+        height: 70px;
     }
     .team-info h3 {
         font-size: 0.9rem;
+    }
+    .team-info .team-title {
+        font-size: 0.8rem;
+    }
+    
+    /* Exec fotosu – tam genişlik */
+    .exec-photo-wrapper {
+        max-width: 100% !important;
+        padding: 6px !important;
+    }
+    
+    /* Apply kartları */
+    .apply-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        max-width: 100%;
+    }
+    .apply-card {
+        padding: 1.2rem 0.8rem;
+    }
+    .apply-card h3 {
+        font-size: 0.9rem;
+    }
+    .apply-icon {
+        font-size: 2rem;
+    }
+    
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    .footer-col {
+        min-width: 100%;
+    }
+    .social-links li a {
+        justify-content: center;
+    }
+}
+
+/* Çok küçük telefonlar (max-width: 480px) */
+@media (max-width: 480px) {
+    .apply-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .team-card-horizontal {
+        padding: 0.8rem;
+        min-height: 110px;
+        gap: 0.8rem;
+    }
+    .team-photo-horizontal {
+        width: 80px;
+        height: 80px;
+    }
+    .team-photo-horizontal.small {
+        width: 55px;
+        height: 55px;
+    }
+    .team-info h3 {
+        font-size: 0.8rem;
+    }
+    .team-info .team-title {
+        font-size: 0.7rem;
+    }
+    .section-header h1 {
+        font-size: 2rem;
+    }
+    .home-content h1 {
+        font-size: 1.5rem;
+    }
+    .countdown-item {
+        padding: 0.5rem 0.8rem;
+        min-width: 50px;
+    }
+    .countdown-number {
+        font-size: 1.4rem;
+    }
+    .countdown-item .countdown-label {
+        font-size: 0.7rem;
+    }
+    .logo-img {
+        height: 40px;
+        width: 40px;
+    }
+    .logo-text {
+        font-size: 1.2rem;
     }
 }
