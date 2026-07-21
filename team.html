@@ -30,7 +30,7 @@
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation menu"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
@@ -39,19 +39,15 @@
             <div class="container">
                 <div class="section-header">
                     <h1>Our Team</h1>
-                    <p>The people behind YEALMUN 2025</p>
                 </div>
 
-                <!-- EXECUTIVE BOARD PHOTO (küçültüldü) -->
-                <div style="text-align: center; margin-bottom: 3rem;">
-                    <div style="display: inline-block; background: #ffffff; padding: 10px; border-radius: 14px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.04); max-width: 50%;">
-                        <img src="assets/toplu_exec_fotosu.jpg" alt="Executive Board" style="width: 100%; height: auto; border-radius: 10px; display: block;">
-                    </div>
+                <!-- EXECUTIVE BOARD PHOTO -->
+                <div class="exec-photo-wrapper">
+                    <img src="assets/toplu_exec_fotosu.jpg" alt="Executive Board" style="width: 100%; height: auto; border-radius: 8px; display: block;">
                 </div>
 
-                <!-- EXECUTIVE BOARD ÜYELERİ (Ada, İdil, Defne, Cem, Ali) -->
+                <!-- EXECUTIVE BOARD ÜYELERİ -->
                 <div class="team-grid" style="margin-bottom: 2.5rem;">
-                    <!-- Director General – Defne Eylül Mısırlı -->
                     <div class="team-card-horizontal">
                         <img src="assets/defne_eylul_misirli.png" alt="Defne Eylül Mısırlı" class="team-photo-horizontal">
                         <div class="team-info">
@@ -59,8 +55,6 @@
                             <span class="team-title">Director General</span>
                         </div>
                     </div>
-
-                    <!-- Deputy Director General – Ada Namlı -->
                     <div class="team-card-horizontal">
                         <img src="assets/ada_namli.JPG" alt="Ada Namlı" class="team-photo-horizontal">
                         <div class="team-info">
@@ -68,8 +62,6 @@
                             <span class="team-title">Deputy Director General</span>
                         </div>
                     </div>
-
-                    <!-- Secretary General – Cem Deniz -->
                     <div class="team-card-horizontal">
                         <img src="assets/cem_deniz.JPG" alt="Cem Deniz" class="team-photo-horizontal">
                         <div class="team-info">
@@ -77,8 +69,6 @@
                             <span class="team-title">Secretary General</span>
                         </div>
                     </div>
-
-                    <!-- Deputy Secretary General – Idil Dirik -->
                     <div class="team-card-horizontal">
                         <img src="assets/idil_dirik.JPG" alt="Idil Dirik" class="team-photo-horizontal">
                         <div class="team-info">
@@ -86,8 +76,6 @@
                             <span class="team-title">Deputy Secretary General</span>
                         </div>
                     </div>
-
-                    <!-- Organization Advisor – Ali Şahinoğlu -->
                     <div class="team-card-horizontal">
                         <img src="assets/ali_sahinoglu.JPG" alt="Ali Şahinoğlu" class="team-photo-horizontal">
                         <div class="team-info">
@@ -97,9 +85,8 @@
                     </div>
                 </div>
 
-                <!-- DİĞER EKİP ÜYELERİ -->
+                <!-- DİĞER EKİP ÜYELERİ (isim üstte, görev altta) -->
                 <div class="team-grid">
-                    <!-- Head of PR – İrem Sertimur -->
                     <div class="team-card-horizontal">
                         <img src="assets/irem_sertimur.png" alt="İrem Sertimur" class="team-photo-horizontal">
                         <div class="team-info">
@@ -108,25 +95,22 @@
                         </div>
                     </div>
 
-                    <!-- Co-Head of Admin – Tek foto (head_of_admin.JPG) -->
                     <div class="team-card-horizontal">
-                        <img src="assets/head_of_admin.JPG" alt="Co-Head of Admin" class="team-photo-horizontal">
+                        <img src="assets/head_of_admin.JPG" alt="Ceyda Türker & Elif Çekiçci" class="team-photo-horizontal">
                         <div class="team-info">
-                            <h3>Co-Head of Admin</h3>
-                            <span class="team-title">Ceyda Türker &amp; Elif Çekiçci</span>
+                            <h3>Ceyda Türker &amp; Elif Çekiçci</h3>
+                            <span class="team-title">Co-Heads of Admin</span>
                         </div>
                     </div>
 
-                    <!-- Co-Head of Press – Tek foto (head_of_press.jpg) -->
                     <div class="team-card-horizontal">
-                        <img src="assets/head_of_press.jpg" alt="Co-Head of Press" class="team-photo-horizontal">
+                        <img src="assets/head_of_press.jpg" alt="Zeynep Nisa Zengin & Alkım Toprak Adıgüzel" class="team-photo-horizontal">
                         <div class="team-info">
-                            <h3>Co-Head of Press</h3>
-                            <span class="team-title">Zeynep Nisa Zengin &amp; Alkım Toprak Adıgüzel</span>
+                            <h3>Zeynep Nisa Zengin &amp; Alkım Toprak Adıgüzel</h3>
+                            <span class="team-title">Co-Heads of Press</span>
                         </div>
                     </div>
 
-                    <!-- Head of Media – Deren Kebabcı -->
                     <div class="team-card-horizontal">
                         <img src="assets/deren_kebapci.png" alt="Deren Kebabcı" class="team-photo-horizontal">
                         <div class="team-info">
@@ -135,31 +119,28 @@
                         </div>
                     </div>
 
-                    <!-- Co-Head of IT – Süleyman Deniz Yünden + Eren Şakacı -->
                     <div class="team-card-horizontal">
                         <div class="duo-photos-horizontal">
                             <img src="assets/suleyman_deniz_yunden.JPG" alt="Süleyman Deniz Yünden" class="team-photo-horizontal small">
                             <img src="assets/eren_sakaci.jpg" alt="Eren Şakacı" class="team-photo-horizontal small">
                         </div>
                         <div class="team-info">
-                            <h3>Co-Head of IT</h3>
-                            <span class="team-title">Süleyman Deniz Yünden &amp; Eren Şakacı</span>
+                            <h3>Süleyman Deniz Yünden &amp; Eren Şakacı</h3>
+                            <span class="team-title">Co-Heads of IT</span>
                         </div>
                     </div>
 
-                    <!-- Co-Head of Entertainment – Yağmur Akgül + Heybet Civan Kortak -->
                     <div class="team-card-horizontal">
                         <div class="duo-photos-horizontal">
                             <img src="assets/yagmur_akgul.JPG" alt="Yağmur Akgül" class="team-photo-horizontal small">
                             <img src="assets/heybet_civan_kortak.JPG" alt="Heybet Civan Kortak" class="team-photo-horizontal small">
                         </div>
                         <div class="team-info">
-                            <h3>Co-Head of Entertainment</h3>
-                            <span class="team-title">Yağmur Akgül &amp; Heybet Civan Kortak</span>
+                            <h3>Yağmur Akgül &amp; Heybet Civan Kortak</h3>
+                            <span class="team-title">Co-Heads of Entertainment</span>
                         </div>
                     </div>
 
-                    <!-- Head of Security – Erdem Kırdı -->
                     <div class="team-card-horizontal">
                         <img src="assets/erdem_kirdi.JPG" alt="Erdem Kırdı" class="team-photo-horizontal">
                         <div class="team-info">
@@ -168,15 +149,14 @@
                         </div>
                     </div>
 
-                    <!-- Co-Head of Logistics – Hatice Kahraman + Yılmaz Başar Turan -->
                     <div class="team-card-horizontal">
                         <div class="duo-photos-horizontal">
                             <img src="assets/hatice_kahraman.png" alt="Hatice Kahraman" class="team-photo-horizontal small">
                             <img src="assets/yilmaz_basar_turan.JPG" alt="Yılmaz Başar Turan" class="team-photo-horizontal small">
                         </div>
                         <div class="team-info">
-                            <h3>Co-Head of Logistics</h3>
-                            <span class="team-title">Hatice Kahraman &amp; Yılmaz Başar Turan</span>
+                            <h3>Hatice Kahraman &amp; Yılmaz Başar Turan</h3>
+                            <span class="team-title">Co-Heads of Logistics</span>
                         </div>
                     </div>
                 </div>
