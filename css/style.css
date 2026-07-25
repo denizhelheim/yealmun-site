@@ -726,3 +726,160 @@ body::after {
         font-size: 1.2rem;
     }
 }
+/* SCHEDULE SAYFASI STILLERİ */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.schedule-day {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.schedule-day:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.schedule-day-header {
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.schedule-day-header h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.day-date {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #475569;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+}
+
+.schedule-items {
+    padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    transition: background 0.15s;
+    gap: 1rem;
+}
+
+.schedule-item:hover {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.schedule-time {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #1e293b;
+    min-width: 110px;
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
+}
+
+.schedule-event {
+    font-size: 0.95rem;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.schedule-event i {
+    width: 18px;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Özel etkinlik tipleri */
+.schedule-item.highlight .schedule-event {
+    font-weight: 600;
+}
+.schedule-item.highlight .schedule-event i {
+    color: #3b82f6;
+}
+
+.schedule-item.break-item .schedule-event i {
+    color: #94a3b8;
+}
+.schedule-item.break-item .schedule-event {
+    color: #64748b;
+}
+
+.schedule-item.lunch-item .schedule-event i {
+    color: #f59e0b;
+}
+.schedule-item.lunch-item .schedule-event {
+    font-weight: 500;
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+/* Mobil Responsive */
+@media (max-width: 992px) {
+    .schedule-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .schedule-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+    
+    .schedule-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.1rem;
+        padding: 0.6rem 0.5rem;
+    }
+    
+    .schedule-time {
+        min-width: auto;
+        font-size: 0.8rem;
+        color: #64748b;
+    }
+    
+    .schedule-event {
+        font-size: 0.9rem;
+    }
+    
+    .schedule-day-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .schedule-day-header h2 {
+        font-size: 1.2rem;
+    }
+}
