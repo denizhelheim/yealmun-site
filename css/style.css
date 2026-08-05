@@ -50,7 +50,6 @@ body::before {
     transform: scale(1.05);
 }
 
-/* Mavi overlay tamamen kaldırıldı */
 body::after {
     display: none;
 }
@@ -318,7 +317,7 @@ body::after {
     margin: 0;
 }
 
-/* TEAM CARDS – YATAY, 3 SÜTUN, FOTOĞRAFLAR BÜYÜK */
+/* TEAM CARDS – YATAY, 3 SÜTUN */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -390,27 +389,6 @@ body::after {
     font-weight: 500;
 }
 
-/* COMMITTEES sayfası için kartlar */
-.committee-card {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 14px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
-
-.committee-card h2 {
-    color: #000000;
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-}
-
-.committee-card p {
-    color: #000000;
-    font-size: 1.1rem;
-}
-
 /* EXEC fotoğrafı için */
 .exec-photo-wrapper {
     display: flex;
@@ -426,7 +404,70 @@ body::after {
     margin: 0 auto 2rem auto;
 }
 
-/* FOOTER – SİYAH (şeffaf) */
+/* COMMITTEES SAYFASI KART STILLERİ */
+.committees-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.committee-card-item {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.committee-card-item:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.committee-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.committee-card-item h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #000000;
+    padding: 0.8rem 0.8rem 0.2rem 0.8rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.committee-agenda {
+    padding: 0.2rem 0.8rem 0.8rem 0.8rem;
+    font-size: 0.95rem;
+    color: #1e293b;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.committee-agenda strong {
+    color: #2563eb;
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+.committee-agenda p {
+    margin: 0.3rem 0 0 0;
+    font-size: 0.92rem;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* FOOTER */
 .site-footer {
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(4px);
@@ -495,7 +536,7 @@ body::after {
     color: #64748b;
 }
 
-/* BUTTON (apply sayfasında) */
+/* BUTTON */
 .btn {
     display: inline-block;
     padding: 10px 24px;
@@ -515,218 +556,7 @@ body::after {
     background: #1d4ed8;
 }
 
-/* ============================================================ */
-/* MOBILE UYUM */
-/* ============================================================ */
-
-/* Tablet ve küçük ekranlar (max-width: 992px) */
-@media (max-width: 992px) {
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.2rem;
-    }
-    
-    .section-header h1 {
-        font-size: 3rem;
-    }
-    
-    .home-content h1 {
-        font-size: 2.2rem;
-    }
-}
-
-/* Telefon (max-width: 768px) */
-@media (max-width: 768px) {
-    /* Mobile menü */
-    .mobile-menu-btn {
-        display: block;
-    }
-    .nav-list {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        background: rgba(0, 0, 0, 0.96);
-        flex-direction: column;
-        align-items: flex-start;
-        width: min(85%, 320px);
-        height: 100vh;
-        padding: 5.5rem 1.5rem 2rem;
-        transition: left 0.2s ease;
-        gap: 0.8rem;
-        z-index: 200;
-        border-right: 1px solid rgba(255, 255, 255, 0.12);
-        overflow-y: auto;
-        backdrop-filter: blur(4px);
-    }
-    .nav-list.active-mobile {
-        left: 0;
-    }
-    .nav-list li {
-        width: 100%;
-    }
-    .nav-link {
-        display: block;
-        color: #cccccc;
-        font-size: 1rem;
-        padding: 0.6rem 0;
-    }
-    .nav-link:hover {
-        color: #ffffff;
-    }
-    
-    /* Logo küçülsün */
-    .logo-img {
-        height: 48px;
-        width: 48px;
-    }
-    .logo-text {
-        font-size: 1.4rem;
-    }
-    
-    /* Başlıklar */
-    .section-header h1 {
-        font-size: 2.5rem;
-    }
-    .section-header p {
-        font-size: 1rem;
-    }
-    
-    /* Home */
-    .home-content h1 {
-        font-size: 1.8rem;
-    }
-    .countdown-grid {
-        gap: 0.8rem;
-    }
-    .countdown-item {
-        padding: 0.8rem 1rem;
-        min-width: 60px;
-    }
-    .countdown-number {
-        font-size: 1.8rem;
-    }
-    .countdown-label {
-        font-size: 1rem;
-    }
-    
-    /* Team kartları – tek sütun */
-    .team-grid {
-        grid-template-columns: 1fr;
-        max-width: 100%;
-        gap: 1rem;
-    }
-    .team-card-horizontal {
-        padding: 1rem;
-        min-height: 130px;
-        gap: 1rem;
-        flex-wrap: wrap;
-    }
-    .team-photo-horizontal {
-        width: 100px;
-        height: 100px;
-        flex-shrink: 0;
-    }
-    .team-photo-horizontal.small {
-        width: 70px;
-        height: 70px;
-    }
-    .team-info {
-        width: 100%;
-    }
-    .team-info h3 {
-        font-size: 0.9rem;
-    }
-    .team-info .team-title {
-        font-size: 0.8rem;
-    }
-    
-    /* Exec fotosu – tam genişlik */
-    .exec-photo-wrapper {
-        max-width: 100% !important;
-        padding: 6px !important;
-    }
-    
-    /* Apply kartları */
-    .apply-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-        max-width: 100%;
-    }
-    .apply-card {
-        padding: 1.2rem 0.8rem;
-    }
-    .apply-card h3 {
-        font-size: 0.9rem;
-    }
-    .apply-icon {
-        font-size: 2rem;
-    }
-    
-    /* Footer */
-    .footer-container {
-        flex-direction: column;
-        gap: 1.5rem;
-        text-align: center;
-    }
-    .footer-col {
-        min-width: 100%;
-    }
-    .social-links li a {
-        justify-content: center;
-    }
-}
-
-/* Çok küçük telefonlar (max-width: 480px) */
-@media (max-width: 480px) {
-    .apply-grid {
-        grid-template-columns: 1fr;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-    .team-card-horizontal {
-        padding: 0.8rem;
-        min-height: 110px;
-        gap: 0.8rem;
-    }
-    .team-photo-horizontal {
-        width: 80px;
-        height: 80px;
-    }
-    .team-photo-horizontal.small {
-        width: 55px;
-        height: 55px;
-    }
-    .team-info h3 {
-        font-size: 0.8rem;
-    }
-    .team-info .team-title {
-        font-size: 0.7rem;
-    }
-    .section-header h1 {
-        font-size: 2rem;
-    }
-    .home-content h1 {
-        font-size: 1.5rem;
-    }
-    .countdown-item {
-        padding: 0.5rem 0.8rem;
-        min-width: 50px;
-    }
-    .countdown-number {
-        font-size: 1.4rem;
-    }
-    .countdown-item .countdown-label {
-        font-size: 0.7rem;
-    }
-    .logo-img {
-        height: 40px;
-        width: 40px;
-    }
-    .logo-text {
-        font-size: 1.2rem;
-    }
-}
-/* SCHEDULE SAYFASI STILLERİ */
+/* SCHEDULE SAYFASI */
 .schedule-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -818,7 +648,6 @@ body::after {
     font-size: 0.9rem;
 }
 
-/* Özel etkinlik tipleri */
 .schedule-item.highlight .schedule-event {
     font-weight: 600;
 }
@@ -840,46 +669,247 @@ body::after {
     font-weight: 500;
 }
 
-.schedule-item:last-child {
-    border-bottom: none;
-}
+/* ============================================================ */
+/* MOBILE UYUM */
+/* ============================================================ */
 
-/* Mobil Responsive */
 @media (max-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+    .section-header h1 {
+        font-size: 3rem;
+    }
+    .home-content h1 {
+        font-size: 2.2rem;
+    }
     .schedule-grid {
         grid-template-columns: 1fr 1fr;
+    }
+    .committees-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 }
 
 @media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    .nav-list {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        background: rgba(0, 0, 0, 0.96);
+        flex-direction: column;
+        align-items: flex-start;
+        width: min(85%, 320px);
+        height: 100vh;
+        padding: 5.5rem 1.5rem 2rem;
+        transition: left 0.2s ease;
+        gap: 0.8rem;
+        z-index: 200;
+        border-right: 1px solid rgba(255, 255, 255, 0.12);
+        overflow-y: auto;
+        backdrop-filter: blur(4px);
+    }
+    .nav-list.active-mobile {
+        left: 0;
+    }
+    .nav-list li {
+        width: 100%;
+    }
+    .nav-link {
+        display: block;
+        color: #cccccc;
+        font-size: 1rem;
+        padding: 0.6rem 0;
+    }
+    .nav-link:hover {
+        color: #ffffff;
+    }
+
+    .logo-img {
+        height: 48px;
+        width: 48px;
+    }
+    .logo-text {
+        font-size: 1.4rem;
+    }
+
+    .section-header h1 {
+        font-size: 2.5rem;
+    }
+    .section-header p {
+        font-size: 1rem;
+    }
+
+    .home-content h1 {
+        font-size: 1.8rem;
+    }
+    .countdown-grid {
+        gap: 0.8rem;
+    }
+    .countdown-item {
+        padding: 0.8rem 1rem;
+        min-width: 60px;
+    }
+    .countdown-number {
+        font-size: 1.8rem;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        gap: 1rem;
+    }
+    .team-card-horizontal {
+        padding: 1rem;
+        min-height: 130px;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    .team-photo-horizontal {
+        width: 100px;
+        height: 100px;
+    }
+    .team-photo-horizontal.small {
+        width: 70px;
+        height: 70px;
+    }
+    .team-info {
+        width: 100%;
+    }
+    .team-info h3 {
+        font-size: 0.9rem;
+    }
+    .team-info .team-title {
+        font-size: 0.8rem;
+    }
+
+    .exec-photo-wrapper {
+        max-width: 100% !important;
+        padding: 6px !important;
+    }
+
+    .apply-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        max-width: 100%;
+    }
+    .apply-card {
+        padding: 1.2rem 0.8rem;
+    }
+    .apply-card h3 {
+        font-size: 0.9rem;
+    }
+    .apply-icon {
+        font-size: 2rem;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    .footer-col {
+        min-width: 100%;
+    }
+    .social-links li a {
+        justify-content: center;
+    }
+
     .schedule-grid {
         grid-template-columns: 1fr;
         max-width: 600px;
     }
-    
     .schedule-item {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.1rem;
         padding: 0.6rem 0.5rem;
     }
-    
     .schedule-time {
         min-width: auto;
         font-size: 0.8rem;
         color: #64748b;
     }
-    
     .schedule-event {
         font-size: 0.9rem;
     }
-    
     .schedule-day-header {
         flex-direction: column;
         align-items: flex-start;
     }
-    
     .schedule-day-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .committees-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+    .committee-image {
+        height: 180px;
+    }
+    .committee-card-item h3 {
+        font-size: 1.05rem;
+    }
+    .committee-agenda {
+        font-size: 0.9rem;
+    }
+    .committee-agenda p {
+        font-size: 0.88rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .apply-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .team-card-horizontal {
+        padding: 0.8rem;
+        min-height: 110px;
+        gap: 0.8rem;
+    }
+    .team-photo-horizontal {
+        width: 80px;
+        height: 80px;
+    }
+    .team-photo-horizontal.small {
+        width: 55px;
+        height: 55px;
+    }
+    .team-info h3 {
+        font-size: 0.8rem;
+    }
+    .team-info .team-title {
+        font-size: 0.7rem;
+    }
+    .section-header h1 {
+        font-size: 2rem;
+    }
+    .home-content h1 {
+        font-size: 1.5rem;
+    }
+    .countdown-item {
+        padding: 0.5rem 0.8rem;
+        min-width: 50px;
+    }
+    .countdown-number {
+        font-size: 1.4rem;
+    }
+    .countdown-item .countdown-label {
+        font-size: 0.7rem;
+    }
+    .logo-img {
+        height: 40px;
+        width: 40px;
+    }
+    .logo-text {
         font-size: 1.2rem;
     }
 }
