@@ -33,7 +33,7 @@ main {
     width: 100%;
 }
 
-/* Arka plan fotoğrafı – tüm sayfalar için, kenar taşmasını engelle */
+/* Arka plan fotoğrafı */
 body::before {
     content: '';
     position: fixed;
@@ -62,7 +62,7 @@ body::after {
     z-index: 1;
 }
 
-/* HEADER – SİYAH (şeffaf) */
+/* HEADER */
 .site-header {
     background: rgba(0, 0, 0, 0.7);
     padding: 0.6rem 0;
@@ -252,29 +252,6 @@ body::after {
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
-/* PAGE PLACEHOLDER (diğer sayfalar) */
-.page-placeholder {
-    min-height: calc(100vh - 280px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 4rem 0 5rem 0;
-}
-
-.page-placeholder h1 {
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin-bottom: 1rem;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-}
-
-.page-placeholder p {
-    font-size: 1.1rem;
-    color: #ffffff;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
-}
-
 /* APPLY CARDS */
 .apply-grid {
     display: grid;
@@ -317,7 +294,7 @@ body::after {
     margin: 0;
 }
 
-/* TEAM CARDS – YATAY, 3 SÜTUN */
+/* TEAM CARDS */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -389,7 +366,7 @@ body::after {
     font-weight: 500;
 }
 
-/* EXEC fotoğrafı için */
+/* EXEC fotoğrafı */
 .exec-photo-wrapper {
     display: flex;
     justify-content: center;
@@ -404,12 +381,12 @@ body::after {
     margin: 0 auto 2rem auto;
 }
 
-/* COMMITTEES SAYFASI KART STILLERİ */
+/* COMMITTEES */
 .committees-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.8rem;
-    max-width: 1100px;
+    gap: 2rem;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -422,6 +399,8 @@ body::after {
     transition: box-shadow 0.2s;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    min-width: 0;
 }
 
 .committee-card-item:hover {
@@ -443,6 +422,38 @@ body::after {
     padding: 0.8rem 0.8rem 0.2rem 0.8rem;
     margin: 0;
     line-height: 1.4;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.difficulty {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.7rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.difficulty.beginner {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.difficulty.intermediate {
+    background: #fef9c3;
+    color: #854d0e;
+}
+
+.difficulty.advanced {
+    background: #fee2e2;
+    color: #991b1b;
 }
 
 .committee-agenda {
@@ -451,13 +462,35 @@ body::after {
     color: #1e293b;
     line-height: 1.6;
     flex: 1;
+    text-align: center;
 }
 
-.committee-agenda strong {
+.agenda-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0 0.2rem;
+    max-width: 100%;
+    flex-wrap: nowrap;
+}
+
+.agenda-label {
     color: #2563eb;
-    display: block;
-    margin-bottom: 0.3rem;
+    font-weight: 700;
     font-size: 0.95rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.agenda-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1e293b;
+    text-align: left;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 .committee-agenda p {
@@ -465,6 +498,48 @@ body::after {
     font-size: 0.92rem;
     color: #1e293b;
     line-height: 1.6;
+    text-align: center;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: #ffffff;
+}
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-apply {
+    margin-top: 1.5rem;
+    padding: 18px 50px;
+    font-size: 1.4rem;
+    background: #2563eb;
+    border-radius: 40px;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+    transition: 0.25s;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-apply:hover {
+    background: #1d4ed8;
+    transform: scale(1.03);
+    box-shadow: 0 6px 30px rgba(37, 99, 235, 0.6);
 }
 
 /* FOOTER */
@@ -536,139 +611,6 @@ body::after {
     color: #64748b;
 }
 
-/* BUTTON */
-.btn {
-    display: inline-block;
-    padding: 10px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.15s;
-}
-
-.btn-primary {
-    background: #2563eb;
-    color: #ffffff;
-}
-.btn-primary:hover {
-    background: #1d4ed8;
-}
-
-/* SCHEDULE SAYFASI */
-.schedule-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.schedule-day {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: box-shadow 0.2s;
-}
-
-.schedule-day:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-}
-
-.schedule-day-header {
-    padding: 1.2rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.schedule-day-header h2 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #000000;
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
-
-.day-date {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #475569;
-    background: rgba(255, 255, 255, 0.6);
-    padding: 0.2rem 0.8rem;
-    border-radius: 20px;
-}
-
-.schedule-items {
-    padding: 0.5rem 1.5rem 1.5rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-}
-
-.schedule-item {
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 0.8rem;
-    border-radius: 8px;
-    transition: background 0.15s;
-    gap: 1rem;
-}
-
-.schedule-item:hover {
-    background: rgba(0, 0, 0, 0.02);
-}
-
-.schedule-time {
-    font-weight: 600;
-    font-size: 0.85rem;
-    color: #1e293b;
-    min-width: 110px;
-    flex-shrink: 0;
-    font-variant-numeric: tabular-nums;
-}
-
-.schedule-event {
-    font-size: 0.95rem;
-    color: #000000;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
-
-.schedule-event i {
-    width: 18px;
-    color: #64748b;
-    font-size: 0.9rem;
-}
-
-.schedule-item.highlight .schedule-event {
-    font-weight: 600;
-}
-.schedule-item.highlight .schedule-event i {
-    color: #3b82f6;
-}
-
-.schedule-item.break-item .schedule-event i {
-    color: #94a3b8;
-}
-.schedule-item.break-item .schedule-event {
-    color: #64748b;
-}
-
-.schedule-item.lunch-item .schedule-event i {
-    color: #f59e0b;
-}
-.schedule-item.lunch-item .schedule-event {
-    font-weight: 500;
-}
-
 /* ============================================================ */
 /* MOBILE UYUM */
 /* ============================================================ */
@@ -683,9 +625,6 @@ body::after {
     }
     .home-content h1 {
         font-size: 2.2rem;
-    }
-    .schedule-grid {
-        grid-template-columns: 1fr 1fr;
     }
     .committees-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -820,35 +759,9 @@ body::after {
         justify-content: center;
     }
 
-    .schedule-grid {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-    }
-    .schedule-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.1rem;
-        padding: 0.6rem 0.5rem;
-    }
-    .schedule-time {
-        min-width: auto;
-        font-size: 0.8rem;
-        color: #64748b;
-    }
-    .schedule-event {
-        font-size: 0.9rem;
-    }
-    .schedule-day-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .schedule-day-header h2 {
-        font-size: 1.2rem;
-    }
-
     .committees-grid {
         grid-template-columns: 1fr;
-        max-width: 400px;
+        max-width: 500px;
     }
     .committee-image {
         height: 180px;
@@ -912,84 +825,4 @@ body::after {
     .logo-text {
         font-size: 1.2rem;
     }
-}
-/* Apply Now butonu – büyütüldü */
-.btn-apply {
-    margin-top: 1.5rem;
-    padding: 18px 50px;
-    font-size: 1.4rem;
-    background: #2563eb;
-    border-radius: 40px;
-    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
-    transition: 0.25s;
-    border: none;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.btn-apply:hover {
-    background: #1d4ed8;
-    transform: scale(1.03);
-    box-shadow: 0 6px 30px rgba(37, 99, 235, 0.6);
-}
-
-/* COMMITTEES kartları – tüm yazılar ortalandı */
-.committee-card-item {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: box-shadow 0.2s;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.committee-card-item:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-}
-
-.committee-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.committee-card-item h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: #000000;
-    padding: 0.8rem 0.8rem 0.2rem 0.8rem;
-    margin: 0;
-    line-height: 1.4;
-    text-align: center;
-}
-
-.committee-agenda {
-    padding: 0.2rem 0.8rem 0.8rem 0.8rem;
-    font-size: 0.95rem;
-    color: #1e293b;
-    line-height: 1.6;
-    flex: 1;
-    text-align: center;
-}
-
-.committee-agenda strong {
-    color: #2563eb;
-    display: block;
-    margin-bottom: 0.3rem;
-    font-size: 0.95rem;
-}
-
-.committee-agenda p {
-    margin: 0.3rem 0 0 0;
-    font-size: 0.92rem;
-    color: #1e293b;
-    line-height: 1.6;
-    text-align: center;
 }
