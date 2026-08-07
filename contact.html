@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>YEALMUN – Contact</title>
     <link rel="icon" type="image/jpeg" href="assets/yealmun_logo.jpeg">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=20260807">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="site-header">
@@ -15,43 +18,44 @@
             <div class="logo-area">
                 <a href="index.html" class="logo-link">
                     <img src="assets/yealmun_logo.jpeg" alt="YEALMUN Logo" class="logo-img">
-                    <span class="logo-text">YEALMUN</span>
+                    <span class="logo-text">YEAL<span>MUN</span></span>
                 </a>
             </div>
-            <nav class="main-nav">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+            <nav class="main-nav" aria-label="Main navigation">
                 <ul class="nav-list">
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="committees.html" class="nav-link">Committees</a></li>
                     <li><a href="team.html" class="nav-link">Our Team</a></li>
                     <li><a href="apply.html" class="nav-link">Apply</a></li>
+                    
                     <li><a href="consent.html" class="nav-link">Consent Forms</a></li>
                     <li><a href="contact.html" class="nav-link active">Contact</a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
     <main>
-        <section class="page-section">
+        <section class="page-section reveal">
             <div class="container">
-                <div class="section-header">
-                    <h1>Contact</h1>
+                <div class="section-header reveal">
+                    <h1>Contact <span>Us</span></h1>
                     <p>Get in touch with the YEALMUN team</p>
                 </div>
 
-                <div style="max-width: 600px; margin: 0 auto; background: rgba(255,255,255,0.85); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.3); border-radius: 16px; padding: 2.5rem; text-align: center;">
-                    <div style="font-size: 3rem; color: #2563eb; margin-bottom: 1rem;">
+                <div class="reveal" style="max-width: 600px; margin: 0 auto; background: rgba(255,255,255,0.05); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 2.5rem; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                    <div style="font-size: 3rem; color: #0ea5ff; margin-bottom: 1rem;">
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <h2 style="color: #000000; font-size: 1.5rem; margin-bottom: 0.5rem;">Email Us</h2>
-                    <p style="color: #1e293b; font-size: 1.1rem; margin-bottom: 1rem;">
+                    <h2 style="font-family: 'Playfair Display', serif; color: #ffffff; font-size: 1.5rem; margin-bottom: 0.5rem;">Email Us</h2>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 1.1rem; margin-bottom: 1rem;">
                         For any questions, inquiries, or support, please reach out to us at:
                     </p>
-                    <a href="mailto:contact@yealmun.com.tr" style="display: inline-block; background: #2563eb; color: #ffffff; padding: 12px 28px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background 0.15s;">
+                    <a href="mailto:contact@yealmun.com.tr" style="display: inline-block; background: linear-gradient(135deg, #0ea5ff, #3b82f6); color: #050507; padding: 12px 28px; border-radius: 48px; text-decoration: none; font-weight: 700; font-size: 1.05rem; transition: all 0.25s ease; box-shadow: 0 10px 36px rgba(14,165,255,0.12);">
                         <i class="fas fa-envelope" style="margin-right: 8px;"></i> contact@yealmun.com.tr
                     </a>
-                    <p style="color: #475569; font-size: 0.9rem; margin-top: 1rem;">
+                    <p style="color: rgba(255,255,255,0.4); font-size: 0.9rem; margin-top: 1rem;">
                         We will get back to you as soon as possible.
                     </p>
                 </div>
@@ -68,6 +72,7 @@
                     <li><a href="committees.html">Committees</a></li>
                     <li><a href="team.html">Our Team</a></li>
                     <li><a href="apply.html">Apply</a></li>
+                    
                     <li><a href="consent.html">Consent Forms</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -81,10 +86,12 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 YEALMUN. All rights reserved.</p>
-            <p class="credit">Development: Süleyman Deniz Yünden | Design: Eren Şakacı</p>
+            <p class="credit">Development: <strong>Süleyman Deniz Yünden &amp; Eren Şakacı</strong></p>
         </div>
     </footer>
 
-    <script src="js/scripts.js"></script>
+    <script src="js/scripts.js?v=20260807"></script>
 </body>
 </html>
+
+
