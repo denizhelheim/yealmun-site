@@ -67,7 +67,7 @@ main {
     flex-direction: column;
 }
 
-/* ---------- HEADER ---------- */
+/* ---------- HEADER (SABİT KOYU LACİVERT) ---------- */
 .site-header {
     position: fixed;
     top: 0;
@@ -75,16 +75,14 @@ main {
     width: 100%;
     z-index: 1000;
     padding: 0.8rem 0;
-    background: rgba(10, 14, 39, 0.3);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(10, 14, 39, 0.3);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+    background: #0a0e27; /* tamamen opak lacivert */
+    backdrop-filter: none; /* gereksiz, kaldırıldı */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: none;
 }
 
-.site-header.scrolled {
-    background: rgba(10, 14, 39, 0.85);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-}
+/* scroll sınıfı tamamen kaldırıldı, artık hiçbir etkisi yok */
 
 .header-container {
     display: flex;

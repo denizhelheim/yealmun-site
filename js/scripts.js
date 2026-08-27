@@ -1,6 +1,6 @@
 // ============================================
 // YEALMUN 2026 - ULTRA MODERN JS
-// Scroll animasyonları, navbar, mobil menü, sayaç
+// Scroll animasyonları, mobil menü, sayaç
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -31,19 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.body.classList.remove('menu-open');
                 }
             });
-        });
-    }
-
-    // ---------- NAVBAR SCROLL ----------
-    const header = document.querySelector('.site-header');
-    if (header) {
-        window.addEventListener('scroll', function () {
-            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-            if (currentScroll > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
         });
     }
 
@@ -117,10 +104,9 @@ document.addEventListener('DOMContentLoaded', function () {
     (function () {
         const TRANS_MS = 360;
         const overlay = document.createElement('div');
-        overlay.className = 'page-transition hidden'; // başlangıçta gizli
+        overlay.className = 'page-transition hidden';
         document.body.appendChild(overlay);
 
-        // overlay'i hemen gizle (sayfa yüklenirken gözükmesin)
         requestAnimationFrame(() => {
             overlay.classList.add('hidden');
         });
