@@ -1,12 +1,14 @@
 // ============================================
-// YEALMUN 2026 - ULTRA MODERN JS
-// Scroll animasyonları, mobil menü, sayaç
+// YEALMUN 2026 - COMPLETE & OPTIMIZED JS
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function () {
-    // ---------- MOBIL MENU ----------
+    'use strict';
+
+    // ---------- 1. MOBİL MENÜ VE EKRAN BOYUTU YÖNETİMİ ----------
     const mobileBtn = document.getElementById('mobileMenuBtn');
     const navList = document.querySelector('.nav-list');
+
     if (mobileBtn && navList) {
         mobileBtn.addEventListener('click', function (e) {
             if (window.innerWidth > 768) return;
@@ -24,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         const mobileNavLinks = navList.querySelectorAll('.nav-link');
-        mobileNavLinks.forEach(link => {
+        mobileNavLinks.forEach(function (link) {
             link.addEventListener('click', function () {
                 if (window.innerWidth <= 768) {
                     navList.classList.remove('active-mobile');
@@ -32,107 +34,104 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         });
-    }
 
-    // ---------- GERİ SAYIM SAYACI (16 Ekim 2026) ----------
-    const targetDate = new Date('2026-10-16T00:00:00').getTime();
-
-    function updateCountdown() {
-        const now = Date.now();
-        const diff = targetDate - now;
-
-        const daysEl = document.getElementById('days');
-        const hoursEl = document.getElementById('hours');
-        const minutesEl = document.getElementById('minutes');
-        const secondsEl = document.getElementById('seconds');
-
-        if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
-
-        if (diff <= 0) {
-            daysEl.textContent = '00';
-            hoursEl.textContent = '00';
-            minutesEl.textContent = '00';
-            secondsEl.textContent = '00';
-            return;
-        }
-
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        daysEl.textContent = String(days).padStart(2, '0');
-        hoursEl.textContent = String(hours).padStart(2, '0');
-        minutesEl.textContent = String(minutes).padStart(2, '0');
-        secondsEl.textContent = String(seconds).padStart(2, '0');
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-
-    // ---------- SCROLL REVEAL ----------
-    const revealElements = document.querySelectorAll('.reveal');
-
-    if (revealElements.length > 0) {
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 768) {
+                if (navList.classList.contains('active-mobile')) {
+                    navList.classList.remove('active-mobile');
                 }
-            });
-        }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px -40px 0px'
+                if (document.body.classList.contains('menu-open')) {
+                    document.body.classList.remove('menu-open');
+                }
+            }
         });
-
-        revealElements.forEach(el => revealObserver.observe(el));
     }
 
-    // ---------- AKTIF NAVLINK ----------
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (!href) return;
-        const hrefPage = href.split('/').pop();
-        if (hrefPage === currentPage) {
-            link.classList.add('active');
-        }
-    });
+    // ---------- 2. GERİ SAYIM SAYACI (SABİT UTC+3 ZAMAN DİLİMİ) ----------
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
 
-    // ---------- PAGE TRANSITION (smooth slide-left, flicker yok) ----------
-    (function () {
-        const TRANS_MS = 360;
-        const overlay = document.createElement('div');
-        overlay.className = 'page-transition hidden';
-        document.body.appendChild(overlay);
+    if (daysEl && hoursEl && minutesEl && secondsEl) {
+        // Türkiye saati ile etkinlik başlangıcı (UTC+3)
+        const targetDate = new Date('2026-10-16T00:00:00+03:00').getTime();
 
-        requestAnimationFrame(() => {
-            overlay.classList.add('hidden');
-        });
+        function updateCountdown() {
+            const now = Date.now();
+            const diff = targetDate - now;
 
-        document.addEventListener('click', function (e) {
-            const anchor = e.target.closest('a');
-            if (!anchor) return;
-            const href = anchor.getAttribute('href');
-            if (!href) return;
-            if (anchor.target === '_blank' || anchor.hasAttribute('download')) return;
-            if (href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
-            if (href.startsWith('#')) return;
-            try {
-                const url = new URL(href, window.location.href);
-                if (url.origin !== window.location.origin) return;
-            } catch (err) {
+            if (diff <= 0) {
+                daysEl.textContent = '00';
+                hoursEl.textContent = '00';
+                minutesEl.textContent = '00';
+                secondsEl.textContent = '00';
                 return;
             }
-            if (anchor.hash && (!anchor.pathname || anchor.pathname === window.location.pathname)) return;
 
-            e.preventDefault();
-            document.body.classList.add('page-transitioning');
-            overlay.classList.remove('hidden');
-            overlay.classList.add('active');
-            setTimeout(() => { window.location.href = anchor.href; }, TRANS_MS);
-        }, true);
-    })();
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
+            daysEl.textContent = String(days).padStart(2, '0');
+            hoursEl.textContent = String(hours).padStart(2, '0');
+            minutesEl.textContent = String(minutes).padStart(2, '0');
+            secondsEl.textContent = String(seconds).padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    }
+
+    // ---------- 3. SCROLL REVEAL (SAYFA İÇİ ANİMASYONLAR) ----------
+    const revealElements = document.querySelectorAll('.reveal');
+    if (revealElements.length > 0) {
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -20px 0px'
+            });
+
+            revealElements.forEach(function (el) {
+                revealObserver.observe(el);
+            });
+        } else {
+            revealElements.forEach(function (el) {
+                el.classList.add('visible');
+            });
+        }
+    }
+
+    // ---------- 4. AKTİF MENÜ TESPİTİ (URL PARAMETRE & HASH KORUMALI) ----------
+    const path = window.location.pathname;
+    let currentPage = path.substring(path.lastIndexOf('/') + 1).split('?')[0].split('#')[0];
+
+    if (!currentPage || currentPage === '' || currentPage === '/') {
+        currentPage = 'index.html';
+    }
+
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(function (link) {
+        const href = link.getAttribute('href');
+        if (!href) return;
+
+        const hrefPage = href.substring(href.lastIndexOf('/') + 1).split('?')[0].split('#')[0];
+        
+        const cleanCurrent = currentPage.replace(/\.html$/, '');
+        const cleanHref = hrefPage.replace(/\.html$/, '');
+
+        if (currentPage === hrefPage || cleanCurrent === cleanHref) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
 });
