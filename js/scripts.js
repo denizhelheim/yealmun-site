@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const secondsEl = document.getElementById('seconds');
 
     if (daysEl && hoursEl && minutesEl && secondsEl) {
-        // Türkiye saati ile etkinlik başlangıcı (UTC+3)
         const targetDate = new Date('2026-10-16T00:00:00+03:00').getTime();
 
         function updateCountdown() {
